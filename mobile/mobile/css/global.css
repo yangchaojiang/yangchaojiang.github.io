@@ -1,0 +1,151 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    font-size: 62.5%;
+    vertical-align: baseline;
+    outline: 0;
+    background: transparent;    
+}
+table, caption, tbody, tfoot, thead, tr, th, td {
+    vertical-align: middle;
+}
+li {
+    list-style: none outside none;
+}
+body {
+    line-height: 1;height:100%;
+}
+:focus {
+    outline: 1;
+}
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+    display: block;
+}
+nav ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+    content: none;
+}
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+ins {
+    text-decoration: none;
+    color: #000;
+    background-color: #ff9;
+}
+mark {
+    font-weight: bold;
+    font-style: italic;
+    color: #000;
+    background-color: #ff9;
+}
+del {
+    text-decoration: line-through;
+}
+em {
+    font-style: normal;
+}
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted #000;
+    cursor: help;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+hr {
+    display: block;
+    height: 1px;
+    margin: 1em 0;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+input, select {
+    vertical-align: middle;
+}
+
+
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+
+
+
+body {
+  font-size: 100%;
+  font-family: "Titillium Web", sans-serif,"Î¢ÈíÑÅºÚ","ËÎÌå";
+  color: #4e6361;
+  background-color: #f5f4e9;
+}
+
+a {
+  color: #6cac70;
+  text-decoration: none;
+}
+
+
+.cd-main-content {
+  /* set a min-height and a z-index to be sure that the main element completely covers the lateral menu */
+  min-height:100%;
+  
+  position:relative; 
+  z-index: 2;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  margin-bottom:2rem;
+}
+.cd-main-content.lateral-menu-is-open {
+  /* translate to show the lateral menu - all content needs to be put in the .cd-main-content to translate*/
+  -webkit-transform: translateX(-260px);
+  -moz-transform: translateX(-260px);
+  -ms-transform: translateX(-260px);
+  -o-transform: translateX(-260px);
+  transform: translateX(-260px);
+}
+@media only screen and (min-width: 768px) {
+  .cd-main-content {
+    
+  }
+}
+
+header {
+  top: 0;
+  left: 0;
+  height: .92rem;
+  width: 100%;
+  background: url(../img/topbg.png) repeat-y;
+  z-index: 3;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.more{ color:#df6f3f; text-align:center; font-size:.24rem; padding:.3rem .4rem; background:#fff;}

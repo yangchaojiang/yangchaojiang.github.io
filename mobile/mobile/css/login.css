@@ -1,0 +1,28 @@
+﻿/*登录页*/
+
+.login{ height:100%; background:#fff; font-family:"微软雅黑"; padding:.2rem  .2rem 10rem; }
+.login ul{ height:4.43rem; width:31.25rem; margin:0 auto; padding:0 auto;}
+.login ul li{ width:13rem;  border-bottom:1px solid #dddddd; float:left; font-size:2.13rem; height:4.42rem; line-height:4.2rem; text-align:center; cursor:pointer; color:#777777; padding:0 15px; }
+.login ul li.current{color:#fd8f23; }
+.login ul li.current p{ height:.31rem; background-color:#fd8f23; width:5rem; margin:0 auto;border-radius:.31rem;}
+
+.login p{ margin-top: 3.43rem;}
+.loginbtn{ text-align:center;}
+.login .pwdlogin,.login .codelogin{width:31.25rem; display:block; margin:0 auto;}
+
+.login p input{ height:3.64rem;border:none;  border-bottom:1px solid #dddddd; font-size:1.88rem; padding:15px auto; }
+input.txt{ width:31.25rem;}
+.login p input[type=button]{ height:.4.6rem;}
+.pwdlogin p.tip{color:#999999; font-size:0.16rem; text-align:left; margin-top:1.87rem; }
+.pwdlogin p i.sline{ height:2.5rem; width:.31rem; background-color:#5277f1;border-radius:.31rem;  position:absolute; margin-top:1.125rem; display:inline-block;}
+.pwdlogin p i.eyes{ height:1.7rem; width:2.7rem; background:url(../img/eyes.png) no-repeat;  display:inline-block; position:relative; margin-top: -3.2rem; float:right;}
+
+.sendcode{width:8.5rem;  border: 0px; font-size: 1.8rem;color: #fd8f23;display: inline-block;text-align: center;cursor: pointer; background:#fff; position:relative; margin-top:-3.3rem; float:right; }
+.sendcodeactive{ color:#999999;}
+
+
+.btnlogin{ margin-top:0.81rem; width:20.93rem; height:5.5rem;  border-radius:45px; color:#fff; font-size:2.0rem;}
+.btnnotenable{background:#e5e5e5;border:1px solid #e5e5e5;}
+.btnenable{background:#fd8f23;border:1px solid #fd8f23;}
+
+.ptop588{ padding-top:3.88rem;}
