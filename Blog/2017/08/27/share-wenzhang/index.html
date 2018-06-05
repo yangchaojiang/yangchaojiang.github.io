@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>100篇精选干货 | yangchaojiang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="yangjiang,yangjiang Blog" />
+  
+  <meta name="description" content="热门技术巧用Android多进程，微信，微博等主流App都在用  Google I/O ‘17 新推出的物理动画库 Android Studio 实用小技巧 那些年Android黑科技①:只要活着，就有希望 那些年Android黑科技②:欺骗的艺术 那些年Android黑科技③:干大事不择手段 你的Android应用稳定吗？ Glide：最新版使用指南（含新特性） 2个函数终结状态栏6个疑难杂症">
+<meta property="og:type" content="article">
+<meta property="og:title" content="100篇精选干货">
+<meta property="og:url" content="http://yangchaojiang.cn/2017/08/27/share-wenzhang/index.html">
+<meta property="og:site_name" content="yangchaojiang">
+<meta property="og:description" content="热门技术巧用Android多进程，微信，微博等主流App都在用  Google I/O ‘17 新推出的物理动画库 Android Studio 实用小技巧 那些年Android黑科技①:只要活着，就有希望 那些年Android黑科技②:欺骗的艺术 那些年Android黑科技③:干大事不择手段 你的Android应用稳定吗？ Glide：最新版使用指南（含新特性） 2个函数终结状态栏6个疑难杂症">
+<meta property="og:updated_time" content="2017-08-27T03:08:55.085Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="100篇精选干货">
+<meta name="twitter:description" content="热门技术巧用Android多进程，微信，微博等主流App都在用  Google I/O ‘17 新推出的物理动画库 Android Studio 实用小技巧 那些年Android黑科技①:只要活着，就有希望 那些年Android黑科技②:欺骗的艺术 那些年Android黑科技③:干大事不择手段 你的Android应用稳定吗？ Glide：最新版使用指南（含新特性） 2个函数终结状态栏6个疑难杂症">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">杨 江</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a target="_blank" href="//yanganan.cn">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a target="_blank" href="http://www.yanganan.cn/server/about/aboutme.html">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        杨 江
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Home" target="_blank" href="//yangchaojiang.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/yangchaojiang">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/u/5114674051?topnav=1&wvr=6&topsug=1&is_all=1">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Mail" target="_blank" href="mailto:yangchaojiang@outlook.com">
+                            <i class="fa fa-envelope-o fa-2x"></i></a>
+                    
+                        <a title="qq" target="_blank" href="//wpa.qq.com/msgrd?v=3&uin=1007181167&site=qq&menu=yes">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-share-wenzhang" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      100篇精选干货
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-08-27
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="热门技术"><a href="#热门技术" class="headerlink" title="热门技术"></a>热门技术</h2><p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485002&amp;idx=1&amp;sn=e07f1949362946ee545079259b6b9014&amp;chksm=96cda707a1ba2e11da927e18c0500bcc9231a82e401069f06048f68b09392c3f332e7893f9a5&amp;scene=21#wechat_redirect" target="_blank" rel="external">巧用Android多进程，微信，微博等主流App都在用</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485791&amp;idx=1&amp;sn=7cefb329021f119f4c91e7b5e65dd8f4&amp;chksm=96cda812a1ba21042760585dc2c12f745140692a1bd34366b1888bcae544be3ec1737ec69d62&amp;scene=21#wechat_redirect" target="_blank" rel="external"> Google I/O ‘17 新推出的物理动画库</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485764&amp;idx=1&amp;sn=f816c73c1bc0d024d877f5f5371488b7&amp;chksm=96cda809a1ba211faf50e83386c40d74bc71a24bd420f22cffda6a3d62a64ded6b5695a20d59&amp;scene=21#wechat_redirect" target="_blank" rel="external">Android Studio 实用小技巧</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485056&amp;idx=1&amp;sn=46cffb71fea5ff5058389ae5c3306fc1&amp;chksm=96cda7cda1ba2edbff4add2246afc7e27d817da7ace5110da08b9ef6009d4d556d3a9a254f7a&amp;scene=21#wechat_redirect" target="_blank" rel="external">那些年Android黑科技①:只要活着，就有希望</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485080&amp;idx=1&amp;sn=fc53738f874746bb0df7ed47b3eeb667&amp;chksm=96cda7d5a1ba2ec3148becbc9e6f0ae78c887287357956ec2f8d5cb1e63f7ca93d9cf2982748&amp;scene=21#wechat_redirect" target="_blank" rel="external">那些年Android黑科技②:欺骗的艺术</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485214&amp;idx=1&amp;sn=989542ebf42258e2747f83913c65ea9b&amp;chksm=96cda653a1ba2f4524bb293dd2a5bc903a30740fbacad2de848a62f7f7ea30ae677bd046ce8d&amp;scene=21#wechat_redirect" target="_blank" rel="external">那些年Android黑科技③:干大事不择手段</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485605&amp;idx=1&amp;sn=c3df77f766984df658191b7d6a5214d1&amp;chksm=96cda9e8a1ba20fedb3e93cf2e74d09702c7a172bf16a8161431992d9e7b7a9ec941702e6628&amp;scene=21#wechat_redirect" target="_blank" rel="external">你的Android应用稳定吗？</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486266&amp;idx=1&amp;sn=80380a7f5163e721c1edfe8542922b3d&amp;chksm=96cdaa77a1ba2361e6ed514cd9cb7ff0b80249c7e0fcb6fbfd1d9784b8dc25e763fd3127d6c4&amp;scene=21#wechat_redirect" target="_blank" rel="external">Glide：最新版使用指南（含新特性）</a></p>
+<p><a href="http://www.jianshu.com/p/068fb77ebe17" target="_blank" rel="external">2个函数终结状态栏6个疑难杂症</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486145&amp;idx=1&amp;sn=ce9570665adc1609094b5d6e8c780447&amp;chksm=96cdab8ca1ba229a5fb2e1f0894c968769c2093527ba619f1783feca9c63de948b4aaf79d09d&amp;scene=21#wechat_redirect" target="_blank" rel="external">仿网易云音乐的主题换肤</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486019&amp;idx=1&amp;sn=a65e5023bca143fc1406194b107e7aae&amp;chksm=96cdab0ea1ba22185753888c2a181fbd781a7c5bc1f984a5798377ac89c9d4b89da6f9adf6fd&amp;scene=21#wechat_redirect" target="_blank" rel="external">Android 安全逆向:篡改你的位置信息</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485739&amp;idx=1&amp;sn=751318824da6b00507c3023207476f84&amp;chksm=96cda866a1ba2170d2ac32d93147a4302ab3e083e96d55966d7e7f545564e02463d4c5083a92&amp;scene=21#wechat_redirect" target="_blank" rel="external">Retrofit 2.0 使用教程（含实例讲解）</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485425&amp;idx=1&amp;sn=78ad2c2bae37b5ec0c5f4b84866c0670&amp;chksm=96cda6bca1ba2faa212ac6d9b19605a6a90515bd95c2e7668fc2e354bc98d57e27d07e378c2e&amp;scene=21#wechat_redirect" target="_blank" rel="external">Android单元测试框架Robolectric3.0：入门篇</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485429&amp;idx=1&amp;sn=abf5cb690209a30c21698e2b5aa048ec&amp;chksm=96cda6b8a1ba2faee7a8e5e8f4387818bc757066fac24247d10ee64ab60116101999f2e424d5&amp;scene=21#wechat_redirect" target="_blank" rel="external">Android单元测试框架Robolectric3.0：数据篇</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485185&amp;idx=1&amp;sn=3809c66d91e92bb6ae5506a45d4d09f8&amp;chksm=96cda64ca1ba2f5a842b60b78733ee54a088c380dfb296a9a756fe01e956fb2a21469a48ec1d&amp;scene=21#wechat_redirect" target="_blank" rel="external">Android_其他语言交互篇——Js、C#、C、C++</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485374&amp;idx=1&amp;sn=cc38fc0d54f98c436c14a52f1968041d&amp;chksm=96cda6f3a1ba2fe5cce11202831f478a86cca760891ea483d5e28e2c1810bcc35f646c5c89e3&amp;scene=21#wechat_redirect" target="_blank" rel="external">神注释大全</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247484968&amp;idx=1&amp;sn=4134dc2fd3d1dd2209b2469cbb2df9ba&amp;chksm=96cda765a1ba2e73c0caca037d950f8eb5bfd5de82b5ce8bb0986d38374b310ad2f511fc8979&amp;scene=21#wechat_redirect" target="_blank" rel="external">《From Java To Kotlin》从Java到Kotlin·译 </a></p>
+<h2 id="View"><a href="#View" class="headerlink" title="View"></a>View</h2><p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486078&amp;idx=1&amp;sn=6c639d878b57023904b97973c4ad5f81&amp;chksm=96cdab33a1ba222546290da987fa8e3d37256fce86715bf32578d5f4d8082a9610ea5874a08e&amp;scene=21#wechat_redirect" target="_blank" rel="external">教你打造绚丽多彩的TextView</a><span style="max-width: 100%; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important;"></span></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485954&amp;idx=1&amp;sn=7183334de913cb70e15b40fa276af03b&amp;chksm=96cdab4fa1ba2259d8f835861d2b55c669fbbb4ffda81f4fa1db48b630b67f0653baade80f1f&amp;scene=21#wechat_redirect" target="_blank" rel="external">仿百度外卖的酷炫水波纹效果</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486324&amp;idx=1&amp;sn=45e7a803b180a09c3a85a90eb4e84a5b&amp;chksm=96cdaa39a1ba232f8fab1ac01a64bf5ca708b544775d51b1677ac415108b2c2f1a1d1106a768&amp;scene=21#wechat_redirect" target="_blank" rel="external">教你打造炫酷的悬浮音乐盒</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486318&amp;idx=1&amp;sn=21106b012a194f248f27e1498d236c37&amp;chksm=96cdaa23a1ba2335d193e364120a4b9a70ec0b73f2c1714443b50b13b549f57ea11c79101992&amp;scene=21#wechat_redirect" target="_blank" rel="external">炫酷ViewPager指示器效果（全面解析）</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486092&amp;idx=1&amp;sn=5c68fc64119a9cbbe6326121d0d8d6b9&amp;chksm=96cdabc1a1ba22d7c890f0ad58731f0d0cb0a89048091f636bffdd681f1ef6cf8a6930fd3d47&amp;scene=21#wechat_redirect" target="_blank" rel="external">网易云音乐唱片机效果</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485861&amp;idx=1&amp;sn=4b17dc1e4c6cbd75522b7468a39b3222&amp;chksm=96cda8e8a1ba21fe3bd516133133432a447cb2ef515c40bc9dade108867ef0bc6e766ae50b99&amp;scene=21#wechat_redirect" target="_blank" rel="external">Android实用View系列之SuperButton</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485843&amp;idx=1&amp;sn=d5de05fc0240be0527de8d69b1616c6f&amp;chksm=96cda8dea1ba21c8ba3c620acc07c2ef1e2afc619928587ac8201958af1eb4d3568f6516e4ac&amp;scene=21#wechat_redirect" target="_blank" rel="external">自定义View之渐变圆环进度条</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485476&amp;idx=1&amp;sn=f6d28e484e574fc9196f1aece5017827&amp;chksm=96cda969a1ba207f99a37ae36c76c32cf7d276382be7bb58949187a3596be202407506bfb066&amp;scene=21#wechat_redirect" target="_blank" rel="external">使用TabLayout看这篇就够了</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485101&amp;idx=1&amp;sn=498414e2ea8a98f4021bba168d0c2832&amp;chksm=96cda7e0a1ba2ef6e683c11988f0b642c6ff2c8fa83029977c1e6a2a95c3b55f11ada72dfd81&amp;scene=21#wechat_redirect" target="_blank" rel="external">Android实用View:水波动画效果（多种方式）</a></p>
+<h2 id="代码封装"><a href="#代码封装" class="headerlink" title="代码封装"></a>代码封装</h2><p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485810&amp;idx=1&amp;sn=70cd8756e349131ca4ba69849619afdc&amp;chksm=96cda83fa1ba21292bcb1a4b6d85d54c8368b1f549b1c78180eb7a68d4bc9258d98575c4a629&amp;scene=21#wechat_redirect" target="_blank" rel="external">RxJava+Retrofit 如何精简封装？</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485590&amp;idx=1&amp;sn=0c63e45be06cb32b34610222d3661410&amp;chksm=96cda9dba1ba20cd40aa2131374f15f6167972fc59764ea0544250d6dfd2e625c5bb885fa3f1&amp;scene=21#wechat_redirect" target="_blank" rel="external">App组件化与业务拆分那些事</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485298&amp;idx=1&amp;sn=2a224af0e09e9f4fa36089fcc258a5d8&amp;chksm=96cda63fa1ba2f29df8e543f4e2851de6873c1124c0c69370ec97bd4bd4ecad92c653be264da&amp;scene=21#wechat_redirect" target="_blank" rel="external">MVP架构开发，一篇让你从看懂到会使用</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485140&amp;idx=1&amp;sn=43f8e81585cc6ea906fa0641fbefd45b&amp;chksm=96cda799a1ba2e8f5ca2f6d47b049a9e0db6faeb56f0612c77e12d8e3d72bb121ac659dceda3&amp;scene=21#wechat_redirect" target="_blank" rel="external">采用Gson解析含有多种JsonObject的复杂json</a></p>
+<h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486163&amp;idx=1&amp;sn=8449c537e5bc0238e0425966c48740d9&amp;chksm=96cdab9ea1ba2288d9f6a860e054518f62555d31072d0a6a4d2ca551c45c20d2b60ff6e6028c&amp;scene=21#wechat_redirect" target="_blank" rel="external">拆 JakeWharton 系列之 Picasso</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485055&amp;idx=1&amp;sn=c3e20d8f499974890c65def242f740d4&amp;chksm=96cda732a1ba2e24c18af1e9dbd8f12151eea75d0303735c53cc92dbe98bb5193d1732ff13ea&amp;scene=21#wechat_redirect" target="_blank" rel="external">拆 JakeWharton 系列之 ButterKnife</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485679&amp;idx=1&amp;sn=cdf5785ae5a63af9b7eec9f068ea4b96&amp;chksm=96cda9a2a1ba20b4f91db6985c24696ec1ad710f06d4d9692e35cec25caf19b2c1bbc76111e6&amp;scene=21#wechat_redirect" target="_blank" rel="external">Android：深入剖析 Retrofit 2.0 源码</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485540&amp;idx=1&amp;sn=9bc2ff88f96e55e34e804077456dc211&amp;chksm=96cda929a1ba203f39a6918367a3e1a423db54086d2b6c3a18c65400f7b521dcd101bc2f386d&amp;scene=21#wechat_redirect" target="_blank" rel="external">AsyncTask? AsyncTask串行and并行？</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485886&amp;idx=1&amp;sn=3f8e193722f79eb1a433b91867f9d885&amp;chksm=96cda8f3a1ba21e561115a42c3dad25248a0fecd823a07e712921c042f7449228db6983e5474&amp;scene=21#wechat_redirect" target="_blank" rel="external">RxJava2.X 源码解析（一）： 探索分发订阅流程</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485904&amp;idx=1&amp;sn=0515378e13ce30814db272ef8f194b53&amp;chksm=96cda89da1ba218b618294bfefa07b71af807f6646482648dd056cc167f8877e3ba97ae52fb1&amp;scene=21#wechat_redirect" target="_blank" rel="external">RxJava2.X 源码解析（二）：神秘的取消订阅流程</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485954&amp;idx=2&amp;sn=56f11ade0644bec80c830890030c8f9d&amp;chksm=96cdab4fa1ba22594d00386bb53be2b2f11ebbea57d3e9bf07dafd7fc0031edfdebd6bc80f68&amp;scene=21#wechat_redirect" target="_blank" rel="external">RxJava2.X 源码分析（三）：订阅线程切换</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486019&amp;idx=2&amp;sn=e1eb6639beceb68bb2740be6065c672e&amp;chksm=96cdab0ea1ba221812afccac370ea8933d89b9942c069abb219535e508061c5c51b01a48e3da&amp;scene=21#wechat_redirect" target="_blank" rel="external">RxJava2.X 源码分析（四）：观察者线程切换原理</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486042&amp;idx=2&amp;sn=e2dfd4c2d0c8e73698ea7fb8fa51c34b&amp;chksm=96cdab17a1ba2201332f2c654d2b7d3f9415a47c6eb14328639c490f70973841914e39a7956f&amp;scene=21#wechat_redirect" target="_blank" rel="external">RxJava2.X 源码分析（五）：论切换线程次数的有效性</a></p>
+<h2 id="精进之路"><a href="#精进之路" class="headerlink" title="精进之路"></a>精进之路</h2><p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486355&amp;idx=1&amp;sn=a8fbe199472263d3b63a9058539970ac&amp;chksm=96cdaadea1ba23c84c527abd0d5c7456080245d52d344e8a6723132fe31a81ff641dfee665f0&amp;scene=21#wechat_redirect" target="_blank" rel="external">知识管理利器：幕布</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486355&amp;idx=2&amp;sn=cb60717ff4ade0fefc9a711959fc190e&amp;chksm=96cdaadea1ba23c8ed49f12519c55b634e8ddb9acc0cef51bad04cb8f3fa9feb293916842e74&amp;scene=21#wechat_redirect" target="_blank" rel="external">流程图制作利器：Giffy Diagrams</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485012&amp;idx=1&amp;sn=03c1978005cb01e40e6f3fe78da4ee9b&amp;chksm=96cda719a1ba2e0f45438be27ef861c1b7007ad5f6140cf0cf0fe5518e2bb01b87f553bfd960&amp;scene=21#wechat_redirect" target="_blank" rel="external">如何让你的知识内化？</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486252&amp;idx=1&amp;sn=464768d55047f7b60c6450c2f2b0c422&amp;chksm=96cdaa61a1ba237703ee2e93d982f6580d10a1ed0152c602fd4d3f2dd3529ba610be48888b52&amp;scene=21#wechat_redirect" target="_blank" rel="external">编程给我带来了什么？</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247486044&amp;idx=1&amp;sn=fdfe1c9e32084ef09d1da52fa3369a07&amp;chksm=96cdab11a1ba2207b18ee26a69fd1cd45b6783e53d767ba4c6eb7a2259e2267ba709be504514&amp;scene=21#wechat_redirect" target="_blank" rel="external">下班后，高效生活的10个日常习惯</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485869&amp;idx=1&amp;sn=6bb6bfac079c6eb691d95211037882e7&amp;chksm=96cda8e0a1ba21f69c702497f45ed3ad4154262f46c5c66268827da23dd8cb412f552d2f3115&amp;scene=21#wechat_redirect" target="_blank" rel="external">攻略 | 自律人生的开启方式—时间管理之术</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485763&amp;idx=1&amp;sn=f6a60bc6b367be260db2e43e19df43d8&amp;chksm=96cda80ea1ba21180025bdb265e0768978192a51c89b6ebe2122cf3d1445fd15624a20e6e463&amp;scene=21#wechat_redirect" target="_blank" rel="external">踏实，是一个年轻人矜贵的品质</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247485562&amp;idx=1&amp;sn=99fb6f3668db9296bfb79278f2507cbc&amp;chksm=96cda937a1ba20210a7c9d7ec83e4e9a8122259c43275edcdd3094c907a690e364bfbfef5d1e&amp;scene=21#wechat_redirect" target="_blank" rel="external">从理论到实践，让你全面看懂OKR！</a></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年08月27日 11:08</p>
+        <p>原始链接： <a class="post-url" href="/2017/08/27/share-wenzhang/" title="100篇精选干货">http://yangchaojiang.cn/2017/08/27/share-wenzhang/</a></p>
+        <footer>
+            <a href="http://yangchaojiang.cn">
+                <img src="/images/logo.png" alt="杨朝江">
+                杨朝江
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yangchaojiang.cn/2017/08/27/share-wenzhang/&title=《100篇精选干货》 — yangchaojiang&pic=http://yangchaojiang.cnimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yangchaojiang.cn/2017/08/27/share-wenzhang/&title=《100篇精选干货》 — yangchaojiang&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yangchaojiang.cn/2017/08/27/share-wenzhang/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《100篇精选干货》 — yangchaojiang&url=http://yangchaojiang.cn/2017/08/27/share-wenzhang/&via=http://yangchaojiang.cn" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yangchaojiang.cn/2017/08/27/share-wenzhang/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yangchaojiang.cn/2017/08/27/share-wenzhang/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#热门技术"><span class="post-toc-text">热门技术</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#View"><span class="post-toc-text">View</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码封装"><span class="post-toc-text">代码封装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#源码分析"><span class="post-toc-text">源码分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#精进之路"><span class="post-toc-text">精进之路</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2017/09/05/jPlayer-blog/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          (no title)
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2017/08/26/bintray-release-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">新版Bintray-极简上传Library到JCenter，可上传自定义maven仓库</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <div id="SOHUCS" sid="share-wenzhang" ></div>
+<script type="text/javascript">
+    (function(){
+        var appid = 'cyt36tWXs';
+        var conf = '42b79e0329709ef48318d7d6739122c2';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 杨朝江<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yangchaojiang.cn",
+      animate: true,
+      isHome: false,
+      share: true
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Android-Kotlin/" style="font-size: 10px;">-Android -Kotlin</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Architecture-Components/" style="font-size: 10px;">Architecture Components</a> <a href="/tags/Architecture-Components/" style="font-size: 13.33px;">Architecture_Components</a> <a href="/tags/Gradle/" style="font-size: 10px;">Gradle</a> <a href="/tags/Kotlin/" style="font-size: 16.67px;">Kotlin</a> <a href="/tags/LiveData/" style="font-size: 10px;">LiveData</a> <a href="/tags/Room/" style="font-size: 10px;">Room</a> <a href="/tags/java/" style="font-size: 13.33px;">java</a> <a href="/tags/kotlin/" style="font-size: 10px;">kotlin</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/leficycle/" style="font-size: 10px;">leficycle</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div id="mobile-header-menu-container">
+        <span class="title">Menu</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a target="_blank" href="//yanganan.cn">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="http://www.yanganan.cn/server/about/aboutme.html">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

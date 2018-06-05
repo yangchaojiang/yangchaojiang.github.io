@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Lambda 表达式有何用处？如何使用？（非原创） | yangchaojiang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="yangjiang,yangjiang Blog" />
+  
+  <meta name="description" content="我们知道，对于一个Java变量，我们可以赋给其一个“值”。  如果你想把“一块代码”赋给一个Java变量，应该怎么做呢？ 比如，我想把右边那块代码，赋给一个叫做aBlockOfCode的Java变量：">
+<meta name="keywords" content="java,kotlin,lambda">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lambda 表达式有何用处？如何使用？（非原创）">
+<meta property="og:url" content="http://yangchaojiang.cn/2018/03/06/lambda-blog/index.html">
+<meta property="og:site_name" content="yangchaojiang">
+<meta property="og:description" content="我们知道，对于一个Java变量，我们可以赋给其一个“值”。  如果你想把“一块代码”赋给一个Java变量，应该怎么做呢？ 比如，我想把右边那块代码，赋给一个叫做aBlockOfCode的Java变量：">
+<meta property="og:image" content="http://img/picture/4faef1576d7a441b90ccad8290c94a87.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/2b1b9773b1394b31affad73b76fe934f.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/3f952ee66b22463f9407c29f641e91c1.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/fded36906e0e48b98ecbce475e21bae0.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/7e6b414c551342ebb7cf938a8bf1f92f.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/209c59f5255c45b7a3535b52a848344c.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/5764e73b63364432b710dbcbf976f978.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/e5b3ac98447347ff9cbfa479a8b7502b.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/71b1be347f734e3587ca3464455cc520.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/de74a238db8f4280bb56a544ccc05648.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/1b2a2f1c092440f7b2367f9c7d25e692.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/a582058d679c4907b4fe3f2050cda0b5.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/83b91e2c6415485fa0843647ba582d71.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/39fde5fc141745eaac25f37f78589c4f.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/0ce6830d4b8e4a09818675c8a29866ea.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/d4be15b3b0784f819dc587a8390476b4.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/0765705f58d54a0c8475ea271a25627b.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/83db072fe24c4606a939fab6037f9df4.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/c5a49678978b43949158216a4a7c5305.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/c38fabb24a7d402c9b6d13f8e6bf3e4f.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/69437bc5d3ee44a6bbebddf2950231f1.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/0d11f569483b43fca03624f9abb2f872.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/bde5ec9d271f438c9ef0d5d9c01cc296.gif">
+<meta property="og:image" content="http://yangchaojiang.cn/img/picture/191f56285eff4e459b7dcaf0918312b8.gif">
+<meta property="og:updated_time" content="2018-03-06T14:30:19.352Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lambda 表达式有何用处？如何使用？（非原创）">
+<meta name="twitter:description" content="我们知道，对于一个Java变量，我们可以赋给其一个“值”。  如果你想把“一块代码”赋给一个Java变量，应该怎么做呢？ 比如，我想把右边那块代码，赋给一个叫做aBlockOfCode的Java变量：">
+<meta name="twitter:image" content="http://img/picture/4faef1576d7a441b90ccad8290c94a87.gif">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">杨 江</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a target="_blank" href="//yanganan.cn">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a target="_blank" href="http://www.yanganan.cn/server/about/aboutme.html">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        杨 江
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Home" target="_blank" href="//yangchaojiang.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/yangchaojiang">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/u/5114674051?topnav=1&wvr=6&topsug=1&is_all=1">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Mail" target="_blank" href="mailto:yangchaojiang@outlook.com">
+                            <i class="fa fa-envelope-o fa-2x"></i></a>
+                    
+                        <a title="qq" target="_blank" href="//wpa.qq.com/msgrd?v=3&uin=1007181167&site=qq&menu=yes">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-lambda-blog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Lambda 表达式有何用处？如何使用？（非原创）
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-03-06
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p> <span>我们知道，对于一个Java变量，我们可以赋给其一个</span><span style="caret-color: red;font-size: 16px;font-weight: bold;">“值”</span><span style="caret-color: red;font-size: 16px;">。</span></p>
+<p><img src="//img/picture/4faef1576d7a441b90ccad8290c94a87.gif" alt=""></p>
+<p><span style="font-size: 16px;">如果你想把</span><span style="font-size: 16px;font-weight: bold;">“一块代码”</span><span style="font-size: 16px;">赋给一个Java变量，应该怎么做呢？</span></p>
+<p><span style="font-size: 16px;">比如，我想把右边那块代码，赋给一个叫做aBlockOfCode的Java变量：</span><br><a id="more"></a></p>
+<p><span style="font-size: 16px;"><img src="/img/picture/2b1b9773b1394b31affad73b76fe934f.gif" alt=""></span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""></p>
+<p><span style="font-size: 16px;">在Java 8之前，这个是做不到的。但是Java 8问世之后，利用Lambda特性，就可以做到了。</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/3f952ee66b22463f9407c29f641e91c1.gif" alt=""></p>
+<p><span style="font-size: 16px;"><br></span></p>
+<p><span style="font-size: 16px;">当然，这个并不是一个很简洁的写法。所以，为了使这个赋值操作更加elegant, 我们可以移除一些没用的声明。</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/fded36906e0e48b98ecbce475e21bae0.gif" alt=""></p>
+<p><span style="font-size: 16px;"><br></span></p>
+<p><span style="font-size: 16px;">这样，我们就成功的非常优雅的把“一块代码”赋给了一个变量。</span><span style="font-size: 16px;font-weight: bold;">而“这块代码”，或者说“这个被赋给一个变量的函数”，就是一个Lambda表达式</span><span style="font-size: 16px;">。</span></p>
+<p><span style="font-size: 16px;">但是这里仍然有一个问题，就是变量aBlockOfCode的类型应该是什么？</span></p>
+<p><span style="font-size: 16px;"><br></span></p>
+<p><span style="font-size: 16px;">在Java 8里面，</span><span style="font-size: 16px;font-weight: bold;">所有的Lambda的类型都是一个接口，而Lambda表达式本身，也就是”那段代码“，需要是这个接口的实现。</span><span style="font-size: 16px;">这是我认为理解Lambda的一个关键所在，简而言之就是，</span><span style="font-size: 16px;font-weight: bold;">Lambda表达式本身就是一个接口的实现</span><span style="font-size: 16px;">。直接这样说可能还是有点让人困扰，我们继续看看例子。我们给上面的aBlockOfCode加上一个类型：</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/7e6b414c551342ebb7cf938a8bf1f92f.gif" alt=""></p>
+<p><span style="font-size: 16px;"><br></span></p>
+<p><span style="font-size: 16px;">这种只有</span><span style="font-size: 16px;font-weight: bold;">一个接口函数需要被实现的接口类型，我们叫它”函数式接口“。</span><span style="font-size: 16px;">为了避免后来的人在这个接口中增加接口函数导致其有多个接口函数需要被实现，变成”非函数接口”，我们可以在这个上面加上一个声明@FunctionalInterface, 这样别人就无法在里面添加新的接口函数了：</span></p>
+<p><span style="font-size: 16px;"><br></span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/209c59f5255c45b7a3535b52a848344c.gif" alt=""></p>
+<p><span style="font-size: 16px;"><br></span></p>
+<p><span style="font-size: 16px;">这样，我们就得到了一个完整的Lambda表达式声明：</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/5764e73b63364432b710dbcbf976f978.gif" alt=""></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""></p>
+<section class="autonum" data-original-title="" title="" style="font-size: 14px;text-align: left;caret-color: red;display: inline-block;padding: 5px 10px;color: rgb(254, 254, 254);font-weight: bold;border-top-left-radius: 3px;border-bottom-left-radius: 3px;background-color: rgb(128, 177, 53);box-sizing: border-box;">2</section><section class="135brush" data-bgless="lighten" data-brushtype="text" data-bglessp="20%" style="font-size: 14px;text-align: left;caret-color: red;display: inline-block;padding: 5px 10px;color: rgb(254, 254, 254);font-weight: bold;border-top-right-radius: 3px;border-bottom-right-radius: 3px;background-color: rgb(176, 214, 118);box-sizing: border-box;">Lambda表达式有什么作用?</section>
+
+<p><span style="font-size: 16px;font-weight: bold;">最直观的作用就是使得代码变得异常简洁。</span></p>
+<p><span style="font-size: 16px;">我们可以对比一下Lambda表达式和传统的Java对同一个接口的实现：</span></p>
+<p><span style="font-size: 16px;"><img src="/img/picture/e5b3ac98447347ff9cbfa479a8b7502b.gif" alt=""></span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt="">（点击看大图）</p>
+<p><span style="font-size: 16px;"><br></span></p>
+<p><span style="font-size: 16px;">这两种写法本质上是等价的。但是显然，Java 8中的写法更加优雅简洁。并且，由于Lambda可以直接赋值给一个变量，</span><span style="font-size: 16px;font-weight: bold;">我们就可以直接把Lambda作为参数传给函数, 而传统的Java必须有明确的接口实现的定义，初始化才行：</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/71b1be347f734e3587ca3464455cc520.gif" alt=""></p>
+<p>（点击看大图）</p>
+<p><span style="font-size: 16px;"><br></span></p>
+<p><span style="font-size: 16px;">有些情况下，这个接口实现只需要用到一次。传统的Java 7必须要求你定义一个“污染环境”的接口实现MyInterfaceImpl，而相较之下Java 8的Lambda, 就显得干净很多。</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""></p>
+<p><span style="font-size: 16px;font-weight: bold;">Lambda结合FunctionalInterface Lib, forEach, stream()，method reference等新特性可以使代码变的更加简洁！</span></p>
+<p><span style="font-size: 16px;">直接上例子。</span></p>
+<p><span style="font-size: 16px;"><br></span></p>
+<p><span style="font-size: 16px;">假设Person的定义和List&lt;Person&gt;的值都给定。</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/de74a238db8f4280bb56a544ccc05648.gif" alt=""></p>
+<p><span style="font-size: 16px;">现在需要你打印出guiltyPersons List里面所有LastName以”Z”开头的人的FirstName。</span></p>
+<p><span style="font-size: 16px;font-weight: bold;">原生态Lambda写法</span><span style="font-size: 16px;">：定义两个函数式接口，定义一个静态函数，调用静态函数并给参数赋值Lambda表达式。</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/1b2a2f1c092440f7b2367f9c7d25e692.gif" alt=""></p>
+<p><span style="font-size: 16px;">这个代码实际上已经比较简洁了，但是我们还可以更简洁么？</span></p>
+<p><span style="font-size: 16px;">当然可以。在Java 8中有一个函数式接口的包，里面定义了大量可能用到的函数式接口（</span><span style="font-size: 16px;color: #003884;text-decoration: underline;">java.util.function (Java Platform SE 8 )</span><span style="font-size: 16px;">）。所以，我们在这里压根都不需要定义NameChecker和Executor这两个函数式接口，直接用Java 8函数式接口包里的Predicate&lt;T&gt;和Consumer&lt;T&gt;就可以了——因为他们这一对的接口定义和NameChecker/Executor其实是一样的。</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/a582058d679c4907b4fe3f2050cda0b5.gif" alt=""></p>
+<p><span style="font-size: 16px;font-weight: bold;">第一步简化 - 利用函数式接口包：</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""></p>
+<p><img src="/img/picture/83b91e2c6415485fa0843647ba582d71.gif" alt=""></p>
+<p><span style="font-size: 16px;">静态函数里面的for each循环其实是非常碍眼的。这里可以利用Iterable自带的forEach()来替代。forEach()本身可以接受一个Consumer&lt;T&gt; 参数。</span></p>
+<p><span style="font-size: 16px;font-weight: bold;">第二步简化 - 用Iterable.forEach()取代foreach loop：</span></p>
+<p><img src="/img/picture/39fde5fc141745eaac25f37f78589c4f.gif" alt=""><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""></p>
+<p><span style="font-size: 16px;">由于静态函数其实只是对List进行了一通操作，这里我们可以甩掉静态函数，直接使用stream()特性来完成。stream()的几个方法都是接受Predicate&lt;T&gt;，Consumer&lt;T&gt;等参数的（</span><span style="font-size: 16px;color: #003884;text-decoration: underline;">java.util.stream (Java Platform SE 8 )</span><span style="font-size: 16px;">）。你理解了上面的内容，stream()这里就非常好理解了，并不需要多做解释。</span></p>
+<p><span style="font-size: 16px;font-weight: bold;">第三步简化 - 利用stream()替代静态函数：</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""></p>
+<p><img src="/img/picture/0ce6830d4b8e4a09818675c8a29866ea.gif" alt=""></p>
+<p><span style="font-size: 16px;">对比最开始的Lambda写法，这里已经非常非常简洁了。但是如果，我们要求变一下，变成print这个人的全部信息，及p -&gt; System.out.println(p); 那么还可以利用Method reference来继续简化。所谓Method reference, 就是用已经写好的别的Object/Class的method来代替Lambda expression。格式如下：</span><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/d4be15b3b0784f819dc587a8390476b4.gif" alt=""></p>
+<p><span style="font-size: 16px;font-weight: bold;">第四步简化 - 如果是println(p)，则可以利用Method reference代替forEach中的Lambda表达式：</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/0765705f58d54a0c8475ea271a25627b.gif" alt=""></p>
+<p><span style="font-size: 16px;">这基本上就是能写的最简洁的版本了。</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""></p>
+<p><span style="font-size: 16px;font-weight: bold;">Lambda配合Optional&lt;T&gt;可以使Java对于null的处理变的异常优雅</span></p>
+<p><span style="font-size: 16px;font-weight: bold;"><br></span></p>
+<p><span style="font-size: 16px;">这里假设我们有一个person object，以及一个person object的Optional wrapper:</span></p>
+<p><img src="/img/picture/83db072fe24c4606a939fab6037f9df4.gif" alt=""></p>
+<p><span style="font-size: 16px;">Optional&lt;T&gt;如果不结合Lambda使用的话，并不能使原来繁琐的null check变的简单。</span></p>
+<p><img src="/img/picture/c5a49678978b43949158216a4a7c5305.gif" alt=""><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""></p>
+<p><span style="font-size: 16px;font-weight: bold;caret-color: red;">只有当Optional&lt;T&gt;结合Lambda一起使用的时候，才能发挥出其真正的威力！</span></p>
+<p><span style="font-size: 16px;">我们现在就来对比一下下面四种常见的null处理中，Java 8的Lambda+Optional&lt;T&gt;和传统Java两者之间对于null的处理差异。</span></p>
+<p><span style="font-size: 16px;font-weight: bold;"><br></span></p>
+<p><span style="font-size: 16px;font-weight: bold;">情况一 - 存在则开干</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/c38fabb24a7d402c9b6d13f8e6bf3e4f.gif" alt=""></p>
+<p><span style="font-size: 16px;font-weight: bold;">情况二 - 存在则返回，无则返回屁</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/69437bc5d3ee44a6bbebddf2950231f1.gif" alt=""></p>
+<p><span style="font-size: 16px;font-weight: bold;">情况三 - 存在则返回，无则由函数产生</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/0d11f569483b43fca03624f9abb2f872.gif" alt=""></p>
+<p><span style="font-size: 16px;font-weight: bold;">情况四 - 夺命连环null检查</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""><img src="/img/picture/bde5ec9d271f438c9ef0d5d9c01cc296.gif" alt=""></p>
+<p><span style="font-size: 16px;">由上述四种情况可以清楚地看到，Optional&lt;T&gt;+Lambda可以让我们少写很多ifElse块。尤其是对于情况四那种夺命连环null检查，传统java的写法显得冗长难懂，而新的Optional&lt;T&gt;+Lambda则清新脱俗，清楚简洁。</span></p>
+<p><img src="/img/picture/191f56285eff4e459b7dcaf0918312b8.gif" alt=""></p>
+<p><span style="font-size: 16px;">关于Java的Lambda, 还有东西需要讨论和学习。比如如何handle lambda exception，如何利用Lambda的特性来进行parallel processing等。总之，我只是一如既往地介绍个大概，让你大概知道，哦！原来是这样子就OK了。网上关于Lambda有很多相关的教程，多看多练。假以时日，必定有所精益。</span></p>
+<p><span style="font-size: 16px;"></span></p>
+<p>（完）</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年03月06日 22:30</p>
+        <p>原始链接： <a class="post-url" href="/2018/03/06/lambda-blog/" title="Lambda 表达式有何用处？如何使用？（非原创）">http://yangchaojiang.cn/2018/03/06/lambda-blog/</a></p>
+        <footer>
+            <a href="http://yangchaojiang.cn">
+                <img src="/images/logo.png" alt="杨朝江">
+                杨朝江
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yangchaojiang.cn/2018/03/06/lambda-blog/&title=《Lambda 表达式有何用处？如何使用？（非原创）》 — yangchaojiang&pic=http://yangchaojiang.cnimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yangchaojiang.cn/2018/03/06/lambda-blog/&title=《Lambda 表达式有何用处？如何使用？（非原创）》 — yangchaojiang&source= 我们知道，对于一个Java变量，我们可以赋给其一个“值”。
+
+如果你想把“一块代码”赋给一个Java变量，应该怎么做呢？
+比如，我想把右边那块代码，赋给..." data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yangchaojiang.cn/2018/03/06/lambda-blog/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Lambda 表达式有何用处？如何使用？（非原创）》 — yangchaojiang&url=http://yangchaojiang.cn/2018/03/06/lambda-blog/&via=http://yangchaojiang.cn" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yangchaojiang.cn/2018/03/06/lambda-blog/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yangchaojiang.cn/2018/03/06/lambda-blog/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/java/" class="color5">java</a>
+      
+    <a href="/tags/kotlin/" class="color2">kotlin</a>
+      
+    <a href="/tags/lambda/" class="color2">lambda</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/03/10/record-blog/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          Android日常细节记录
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2017/09/05/jPlayer-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title"></span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <div id="SOHUCS" sid="lambda-blog" ></div>
+<script type="text/javascript">
+    (function(){
+        var appid = 'cyt36tWXs';
+        var conf = '42b79e0329709ef48318d7d6739122c2';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2018 杨朝江<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yangchaojiang.cn",
+      animate: true,
+      isHome: false,
+      share: true
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Android-Kotlin/" style="font-size: 10px;">-Android -Kotlin</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Architecture-Components/" style="font-size: 10px;">Architecture Components</a> <a href="/tags/Architecture-Components/" style="font-size: 13.33px;">Architecture_Components</a> <a href="/tags/Gradle/" style="font-size: 10px;">Gradle</a> <a href="/tags/Kotlin/" style="font-size: 16.67px;">Kotlin</a> <a href="/tags/LiveData/" style="font-size: 10px;">LiveData</a> <a href="/tags/Room/" style="font-size: 10px;">Room</a> <a href="/tags/java/" style="font-size: 13.33px;">java</a> <a href="/tags/kotlin/" style="font-size: 10px;">kotlin</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/leficycle/" style="font-size: 10px;">leficycle</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div id="mobile-header-menu-container">
+        <span class="title">Menu</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a target="_blank" href="//yanganan.cn">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="http://www.yanganan.cn/server/about/aboutme.html">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+  </div>
+</body>
+</html>
